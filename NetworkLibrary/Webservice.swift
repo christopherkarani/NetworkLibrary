@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 class Webservice {
     func load<A>(_ resource: Resource<A>, completion: @escaping (A?) -> () ) {
         URLSession.shared.dataTask(with: resource.url) { data, _, error in

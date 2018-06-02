@@ -8,6 +8,13 @@
 
 import Foundation
 
+/// Used to represent whether a request was successful or encountered an error.
+///
+/// - success: The request and all post processing operations were successful resulting in the serialization of the
+///            provided associated value.
+///
+/// - failure: The request encountered an error resulting in a failure. The associated values are the original data
+///            provided by the server as well as the error that caused the failure.
 public enum Result<Value> {
     case success(Value)
     case failure(Error)
@@ -36,34 +43,26 @@ extension Result: CustomDebugStringConvertible {
 extension Result {
     ///Resturns a value if self represents a success, otherwise nil
     public var value: Value? {
-        switch self {
-        case .success(let value): return value
-        case .failure: return nil
-        }
+        guard case .success(let v) = self else { return nil}
+        return v
     }
     
     ///Returns a value if self represents an failure, otherwise nil
     public var error: Error? {
-        switch self {
-        case .success: return nil
-        case .failure(let error): return error
-        }
+        guard case .failure(let error) = self else { return nil }
+        return error
     }
     
     ///Returns a bollean representing if self is a success
     public var isSuccess: Bool {
-        switch self {
-        case .success: return true
-        case .failure: return false
-        }
+        guard case .success = self else { return false }
+        return true
     }
     
      ///Returns a bollean representing if self is a failure
     public var isFailure: Bool {
-        switch self {
-        case .success: return false
-        case .failure: return true
-        }
+        guard case .failure = self else { return false }
+        return true
     }
 }
 

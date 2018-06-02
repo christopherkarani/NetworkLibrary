@@ -26,7 +26,5 @@ struct Post: Codable {
 }
 
 extension Post {
-    static let all = Resource<[Post]>(url: URLManager.posts) { data in
-        return try! JSONDecoder().decode([Post].self, from: data)
-    }
+    static let all = Resource<[Post]>(url: URLManager.posts)
 }
