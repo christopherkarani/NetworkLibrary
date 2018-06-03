@@ -18,13 +18,28 @@ import Foundation
  */
 final class CachedWebService {
     let webservice: Webservice
+    let cache : Cache
     
-    init(_ webservice: Webservice) {
+    
+    
+    init(_ webservice: Webservice, cache: Cache = Cache()) {
         self.webservice = webservice
+        self.cache = cache
     }
+    
     
     func load<A>(_ resource: Resource<A>, update: @escaping (Result<A>) -> ()) {
+
+        // return cached data if any
+        if let result = cache.load(resource) {
+            print("Cache Hit")
+            update(.success(result))
+        }
+        
+        // In any case hit the end point
         webservice.load(resource, completion: update)
     }
+    
+
 }
 

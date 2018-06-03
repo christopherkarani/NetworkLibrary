@@ -9,22 +9,25 @@
 import Foundation
 /**
  Cache only deals with storing and retrieving cached data
+ Writes Data to the disk
  */
 
 final class Cache {
     
-    // default
-    var baseUrl = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+    ///Storage
+    let storage = FileStorage()
     
     
     /// load data from the cache
     func load<A>(_ resource: Resource<A>) -> A? {
-        let url = baseUrl.appendingPathComponent(resource.cacheKey)
-        let data = try? Data(contentsOf: url)
-        
-        /* We use flatMap to apply resource.parse to data,
-         because data is optional and the result of resource.parse is also optional */
+        guard case .get = resource.method else { return nil }
+        let data = storage[resource.cacheKey]
         return data.flatMap(resource.parse)
+    }
     
+    /// save data to the cache
+    func save<A>(data: Data, for resource: Resource<A>) {
+        guard case .get = resource.method else { return }
+        storage[resource.cacheKey] = data
     }
 }
