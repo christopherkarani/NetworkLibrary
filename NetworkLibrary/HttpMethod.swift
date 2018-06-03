@@ -35,4 +35,11 @@ extension HttpMethod: CustomDebugStringConvertible {
     }
 }
 
-
+extension HttpMethod {
+    /// Maps over HttpMethod, this method either returns .get or returns .post(Data) that can be
+    /// Transformed on the call site
+    func map<R>(_ transform: (Body) throws -> R) rethrows -> HttpMethod<R> {
+        guard case .post(let body) = self else { return .get }
+        return .post(try transform(body))
+    }
+}

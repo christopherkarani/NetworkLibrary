@@ -10,10 +10,10 @@ import Foundation
 
 
 let webservice = Webservice()
+let postUrl = URL(string: "https://jsonplaceholder.typicode.com/posts")!
+let post = Post(id: 2, userId: 4, title: "hello", body: "Chris made this one")
+let postJSON: [String : Any] = ["userId": 4, "title": "hello", "body": "Chris made this one"]
 
 
-webservice.load(Post.all) { (posts) in
-    print("Done, Posts count:", posts!.count)
-}
 
 RunLoop.main.run(until: Date(timeIntervalSinceNow: 15))

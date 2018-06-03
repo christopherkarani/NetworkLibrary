@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1806813620C4208F0050E36C /* CachedWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806813520C4208F0050E36C /* CachedWebService.swift */; };
+		1806813820C4237A0050E36C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806813720C4237A0050E36C /* Cache.swift */; };
 		18F6E3C420C2B75D00131A60 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6E3C320C2B75D00131A60 /* main.swift */; };
 		18F6E3CB20C2B79200131A60 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6E3CA20C2B79200131A60 /* Resource.swift */; };
 		18F6E3CD20C2B7C100131A60 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6E3CC20C2B7C100131A60 /* Webservice.swift */; };
 		18F6E3CF20C2BD0200131A60 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6E3CE20C2BD0200131A60 /* Post.swift */; };
 		18F6E3D120C2CE7500131A60 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6E3D020C2CE7500131A60 /* Result.swift */; };
 		18F6E3D320C2CEA800131A60 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6E3D220C2CEA800131A60 /* HttpMethod.swift */; };
+		18F6E3D520C3321100131A60 /* URLRequest_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6E3D420C3321100131A60 /* URLRequest_Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +31,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1806813520C4208F0050E36C /* CachedWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedWebService.swift; sourceTree = "<group>"; };
+		1806813720C4237A0050E36C /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		18F6E3C020C2B75D00131A60 /* NetworkLibrary */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NetworkLibrary; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F6E3C320C2B75D00131A60 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		18F6E3CA20C2B79200131A60 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
@@ -35,6 +40,7 @@
 		18F6E3CE20C2BD0200131A60 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		18F6E3D020C2CE7500131A60 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		18F6E3D220C2CEA800131A60 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		18F6E3D420C3321100131A60 /* URLRequest_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest_Ext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,9 @@
 				18F6E3CE20C2BD0200131A60 /* Post.swift */,
 				18F6E3D020C2CE7500131A60 /* Result.swift */,
 				18F6E3D220C2CEA800131A60 /* HttpMethod.swift */,
+				18F6E3D420C3321100131A60 /* URLRequest_Ext.swift */,
+				1806813520C4208F0050E36C /* CachedWebService.swift */,
+				1806813720C4237A0050E36C /* Cache.swift */,
 			);
 			path = NetworkLibrary;
 			sourceTree = "<group>";
@@ -134,8 +143,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1806813620C4208F0050E36C /* CachedWebService.swift in Sources */,
+				1806813820C4237A0050E36C /* Cache.swift in Sources */,
 				18F6E3C420C2B75D00131A60 /* main.swift in Sources */,
 				18F6E3D120C2CE7500131A60 /* Result.swift in Sources */,
+				18F6E3D520C3321100131A60 /* URLRequest_Ext.swift in Sources */,
 				18F6E3CB20C2B79200131A60 /* Resource.swift in Sources */,
 				18F6E3CD20C2B7C100131A60 /* Webservice.swift in Sources */,
 				18F6E3D320C2CEA800131A60 /* HttpMethod.swift in Sources */,

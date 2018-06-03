@@ -10,7 +10,8 @@ import Foundation
 
 class Webservice {
     func load<A>(_ resource: Resource<A>, completion: @escaping (A?) -> () ) {
-        URLSession.shared.dataTask(with: resource.url) { data, _, error in
+        let request = URLRequest(resource: resource)
+        URLSession.shared.dataTask(with: request) { data, _, error in
             guard let data = data else { return }
             completion(resource.parse(data))
         }.resume()
