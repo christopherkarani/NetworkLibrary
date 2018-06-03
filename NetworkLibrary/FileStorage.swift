@@ -14,10 +14,12 @@ struct FileStorage {
     
     subscript (key: String) -> Data? {
         get {
+            print("getting from cache, with baseUrl:", baseUrl)
             let url = baseUrl.appendingPathComponent(key)
             return try? Data(contentsOf: url)
         }
         set {
+            print("Setting to cache")
             let url = baseUrl.appendingPathComponent(key)
             return _ = try? newValue?.write(to: url)
         }

@@ -13,10 +13,8 @@ import Foundation
  */
 
 final class Cache {
-    
     ///Storage
-    let storage = FileStorage()
-    
+    var storage = FileStorage()
     
     /// load data from the cache
     func load<A>(_ resource: Resource<A>) -> A? {
