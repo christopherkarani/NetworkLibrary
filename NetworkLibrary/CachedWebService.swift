@@ -23,7 +23,7 @@ final class CachedWebService {
         self.webservice = webservice
     }
     
-    func load<A>(_ resource: Resource<A>, update: @escaping (A?) -> ()) {
+    func load<A>(_ resource: Resource<A>, update: @escaping (Result<A>) -> ()) {
         webservice.load(resource, completion: update)
     }
 }

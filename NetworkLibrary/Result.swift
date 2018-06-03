@@ -20,6 +20,19 @@ public enum Result<Value> {
     case failure(Error)
 }
 
+/// Initializers
+extension Result {
+    /// Initialize a succesful result with a value contained
+    public init(_ value: Value) {
+        self = .success(value)
+    }
+    
+    /// Initialize a failure result with an Error contained
+    public init(_ error: Error) {
+        self = .failure(error)
+    }
+}
+
 extension Result: CustomStringConvertible {
     /// The debug textual representation when written to an output stream, which includes whether the result was a value or error
     public var description: String {
