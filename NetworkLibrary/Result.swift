@@ -31,6 +31,15 @@ extension Result {
     public init(_ error: Error) {
         self = .failure(error)
     }
+    
+    /// A value or an Error
+    public init(value: Value?, or error: Error) {
+        if let value = value {
+            self = .success(value)
+        } else {
+            self = .failure(error)
+        }
+    }
 }
 
 extension Result: CustomStringConvertible {
